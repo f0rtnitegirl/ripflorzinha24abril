@@ -6,14 +6,28 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
-        vvideo.principal {
-            mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
-        }
         body {
             background-color: black;
             margin: 0;
             overflow: hidden;
+        }
+
+        .video-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: auto;
+
+            mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
+        }
+
+        .video-wrap video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .flor {
@@ -33,29 +47,14 @@
                 opacity: 0;
             }
         }
-
-        .principal {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 40%;
-            max-height: 80%;
-            animation: flutuar 3s ease-in-out infinite;
-        }
-
-        @keyframes flutuar {
-            0% { transform: translate(-50%, -50%) translateY(0); }
-            50% { transform: translate(-50%, -50%) translateY(-10px); }
-            100% { transform: translate(-50%, -50%) translateY(0); }
-        }
-
     </style>
 </head>
 
 <body>
 
-    <video src="flor.mp4" class="principal" autoplay loop muted playsinline></video>
+    <div class="video-wrap">
+        <video src="flor.mp4" autoplay loop muted playsinline></video>
+    </div>
 
     <script>
         function criarFlor() {
