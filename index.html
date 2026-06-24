@@ -12,16 +12,25 @@
             overflow: hidden;
         }
 
-        .video-wrap {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: auto;
+       .video-wrap {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+    
+           width: 22%;
+           height: auto;
 
-            mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse, black 45%, transparent 100%);
+           animation: flutuar 3s ease-in-out infinite;
+
+           mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
+           -webkit-mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
+        }
+
+        @keyframes flutuar {
+           0% { transform: translate(-50%, -50%) translateY(0); }
+           50% { transform: translate(-50%, -50%) translateY(-10px); }
+           100% { transform: translate(-50%, -50%) translateY(0); }
         }
 
         .video-wrap video {
