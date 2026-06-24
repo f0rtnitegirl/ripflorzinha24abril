@@ -12,31 +12,35 @@
             overflow: hidden;
         }
 
-       .video-wrap {
-           position: absolute;
-           top: 50%;
-           left: 50%;
-           transform: translate(-50%, -50%);
-    
-           width: 22%;
-           height: auto;
+        .video-mask {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
-           animation: flutuar 3s ease-in-out infinite;
+            width: 22%;
+            height: auto;
 
-           mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
-           -webkit-mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
+            mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse, black 50%, transparent 100%);
         }
 
-        @keyframes flutuar {
-           0% { transform: translate(-50%, -50%) translateY(0); }
-           50% { transform: translate(-50%, -50%) translateY(-10px); }
-           100% { transform: translate(-50%, -50%) translateY(0); }
+        .video-wrap {
+            width: 100%;
+            height: auto;
+            animation: flutuar 3s ease-in-out infinite;
         }
 
         .video-wrap video {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        @keyframes flutuar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
 
         .flor {
@@ -61,8 +65,10 @@
 
 <body>
 
-    <div class="video-wrap">
-        <video src="flor.mp4" autoplay loop muted playsinline></video>
+    <div class="video-mask">
+        <div class="video-wrap">
+            <video src="flor.mp4" autoplay loop muted playsinline></video>
+        </div>
     </div>
 
     <script>
@@ -91,3 +97,4 @@
 
 </body>
 </html>
+
